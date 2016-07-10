@@ -1,0 +1,47 @@
+ <ion-view view-title="take a picture">
+ <ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>     
+  <ion-content  class="padding" >
+    <div class="list-card">
+        <div class="item item-avatar">
+        <img ng-src="img/camera.png">    
+        <h2>Add medium</h2>    
+        <p> hello <strong>{{username}}</strong> here You can Add A medium</p>    
+        <div>
+       <button class = "button button-dark" ng-click = "takePicture()">Take Picture</button>
+       <button class = "button button-dark" ng-click = "getPicture()">Open Gallery</button>
+        </div> 
+        </div>
+        <div class="item item-body"> 
+     <div>
+    <!-- <p>{{picture}}</p> -->     
+     <img class="full-image" ng-src = "{{picture}}">
+      </div> 
+      <ion-list>
+    <form ng-if="picture" name="form" class="css-form" novalidate>
+     
+    <label class="item item-input">           
+    Alertenative:
+    <input type="text" ng-model="medium.alternative" name="title" required="" placeholder="medium title" >
+    <br />
+    <div ng-show="form.$submitted || form.title.$touched">
+      <div ng-show="form.title.$error.required">say something about this medium</div>
+    </div>
+    </label>
+    
+        
+    
+
+
+ <input ng-show="!form.title.$error.required" type="submit" ng-click="send(medium)" value="Send" class="button button-block button-dark"/>
+   
+  </form>
+    </ion-list>
+        </div>
+      </div>
+      
+     
+     
+     </ion-content>
+</ion-view>

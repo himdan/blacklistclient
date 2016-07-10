@@ -1,0 +1,19 @@
+<ion-view view-title="{{claim.location.address}}">
+    <ion-content>
+        
+ <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="{{root+'/uploads/categories/'+claim.category.image}}">
+    <h2>{{claim.title}}</h2>      
+   <p><span class="dark">Address:</span>{{location.address}}</p>      
+   <p><span class="dark">Description:</span>{{location.description}}</p>
+  </div>
+
+  <div class="item item-body">
+   <div id="map" data-tap-disabled="true" style="height:500px;width:100%;"></div>
+  </div>
+
+</div> 
+    </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="{{claim.title}}">
+    
+  <ion-content  class="padding" >
+   <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="{{root+'/uploads/categories/'+claim.category.image}}">
+    <h2>{{claim.title}}</h2>
+    <p>{{claim.created_at|date}}</p>
+  </div>
+
+  <div class="item item-body">
+      <div ng-repeat="medium in claim.medias">
+          <img title="{{medium.alternative}}" alt="{{medium.alternative}}"src="{{ root+ '/uploads/documents/' +medium.path}}" height="400px" width="300px">
+      </div>
+    
+  </div>
+
+</div>  
+      </ion-content>
+</ion-view>

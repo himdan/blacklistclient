@@ -1,0 +1,23 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-console/www/logger.js",
+        "C:/ionicproject/blacklist/gulpfile.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/src/blackberry10/index.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/src/browser/DeviceProxy.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/src/firefoxos/DeviceProxy.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/src/tizen/DeviceProxy.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/src/ubuntu/device.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/src/windows/DeviceProxy.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/tests/tests.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-device/www/device.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-splashscreen/src/blackberry10/index.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-splashscreen/src/tizen/SplashScreenProxy.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-splashscreen/tests/tests.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-splashscreen/www/windows/SplashScreenProxy.js",
+        "C:/ionicproject/blacklist/www/js/app.js",
+        "C:/ionicproject/blacklist/plugins/cordova-plugin-statusbar/src/windows/StatusBarProxy.js",
+        "C:/ionicproject/blacklist/www/js/controllers.js",
+        "C:/ionicproject/blacklist/www/js/services.js"
+    ]
+}

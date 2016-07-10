@@ -1,0 +1,48 @@
+<ion-view view-title="Edit Claim">
+    <ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>
+  <ion-content>
+      <div > Hello <strong>{{username}}</strong> You can Here Edit this claim</div>
+    <ion-list>
+    
+    <div class="assertive">{{ status }}</div>
+    <form name="form" class="css-form" novalidate>
+     <input type="hidden" ng-model="claim.id" name="id"/>
+    <label class="item item-input">           
+    Title:
+    <input type="text" ng-model="claim.title" name="title" required="" placeholder="claim title" />
+    <br />
+    <div ng-show="form.$submitted || form.title.$touched">
+      <div ng-show="form.title.$error.required">title of the claim.</div>
+    </div>
+           </label>
+    <label class="item item-input">       
+    Description:
+    <Textarea  ng-model="claim.description" name="description" required=""  ></Textarea>
+    <br />
+    <div ng-show="form.$submitted || form.description.$touched">
+      <span ng-show="form.description.$error.required">subject of the claim.</span>
+      
+    </div>
+    </label>
+    <label class="item item-input">
+     category    
+     <select name="category" ng-model="claim.category" required="">
+        <option ng-repeat="category in categories" value="{{category.id}}" {{ if(category.id==claim.category) selected }}>{{category.title}}</option>
+        </select>    
+        <div ng-show="form.$submitted || form.category.$touched">
+      <span ng-show="form.category.$error.required">You must choose a category</span>
+      
+    </div>
+    </label>
+        
+    
+
+
+ <input ng-show="!form.title.$error.required && !form.description.$error.required&&!form.category.$error.required" type="submit" ng-click="edit(claim)" value="Send" class="button button-block button-dark"/>
+   
+  </form>
+    </ion-list>
+  </ion-content>
+</ion-view>

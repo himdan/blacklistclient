@@ -1,0 +1,57 @@
+<ion-view view-title="New claim">
+<ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>    
+  <ion-content>
+    <div class="list-card">  
+        <div class="item item-avatar">
+        <img ng-src="img/form.png"  > 
+        <h2>Create new claim</h2>    
+        <p > Hello <strong>{{username}}</strong> Here Your Can Create a <br>New Claim</p>
+        </div>
+        <div class="item item-body"></div>
+      
+      
+   
+    
+    <div ng-if="status" class="assertive">{{ status }}</div>
+    <form name="form" class="css-form" novalidate>
+     
+    <label class="item item-input">           
+    Title:
+    <input type="text" ng-model="claim.title" name="title" required="" placeholder="claim title" />
+    <br />
+    <div ng-show="form.$submitted || form.title.$touched">
+      <div ng-show="form.title.$error.required">title of the claim.</div>
+    </div>
+           </label>
+    <label class="item item-input">       
+    Description:
+    <Textarea  ng-model="claim.description" name="description" required=""  ></Textarea>
+    <br />
+    <div ng-show="form.$submitted || form.description.$touched">
+      <span ng-show="form.description.$error.required">subject of the claim.</span>
+      
+    </div>
+    </label>
+    <label class="item item-input">
+     category    
+     <select name="category" ng-model="claim.category" required="">
+        <option ng-repeat="category in categories" value="{{category.id}}">{{category.title}}</option>
+        </select>    
+        <div ng-show="form.$submitted || form.category.$touched">
+      <span ng-show="form.category.$error.required">You must choose a category</span>
+      
+    </div>
+    </label>
+        
+    
+
+
+ <input ng-show="!form.title.$error.required && !form.description.$error.required&&!form.category.$error.required" type="submit" ng-click="send(claim)" value="Send" class="button button-block button-dark"/>
+   
+  </form>
+  
+ </div>
+  </ion-content>
+</ion-view>

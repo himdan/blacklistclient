@@ -1,0 +1,30 @@
+<ion-view view-title="{{claim.title}}">
+<ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>    
+  <ion-content  class="padding" >
+   <div > Hello <strong>{{username}}</strong> Here Your Can Edit Your claim</div>
+   <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="{{ root+'/uploads/categories/'+ claim.category.image}}">
+    <h2>{{claim.title}}</h2>
+    <p>{{claim.created_at|date}}</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="{{ root+'/uploads/documents/'+claim.medias[0].path }}">
+    <p>
+       {{claim.description}}
+    </p>
+    <p>
+       <a href="#/tab/myclaim/edit/{{claim.id}}" class="button button-dark button-subdued">Edit</a>
+       <a href="#/tab/myclaim/camera/{{claim.id}}" class="button button-dark button-subdued">Add medium</a>
+       <a ng-if="!claim.location&&claim.isservice"href="#/tab/myclaim/map/{{claim.id}}" class="button button-dark button-subdued">Add Location</a>
+       <a ng-if="claim.location" href="#/tab/map/{{claim.id}}"  class="button button-dark button-subdued">Location</a>   
+    </p>
+  </div>
+
+</div>  
+      </ion-content>
+</ion-view>

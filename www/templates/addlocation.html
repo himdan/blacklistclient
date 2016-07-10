@@ -1,0 +1,48 @@
+<ion-view view-title="share your location">
+    <ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>
+    <ion-content>
+        
+ <div class="list card">
+  <div class="item item-avatar">
+      <img src="img/location.png">
+      <h2>Add location</h2>
+      <p> <button class="button button-dark" ng-click="shareLocation()">share Your location</button>
+  </p>
+  </div>
+  <div class="item item-body">
+   <div id="map" data-tap-disabled="true" style="height:500px;width:100%;"></div>
+  
+   <ion-list>
+    <form ng-if="show" name="form" class="css-form" novalidate>
+     
+    <label class="item item-input">           
+    Address:
+    <input type="text" ng-model="location.address" name="address" required="" placeholder="Address" >
+    <br />
+    <div ng-show="form.$submitted || form.address.$touched">
+      <div ng-show="form.address.$error.required">please type an address</div>
+    </div>
+    </label>
+     <label class="item item-input">           
+    Description:
+         <textarea type="text" ng-model="location.description" name="description" required="" placeholder="Description" ></textarea>
+    <br />
+    <div ng-show="form.$submitted || form.description.$touched">
+      <div ng-show="form.description.$error.required">say something about this location</div>
+    </div>
+    </label>    
+    
+        
+    
+
+
+ <input ng-show="!form.address.$error.required&&!form.description.$error.required" type="submit" ng-click="send(location)" value="Send" class="button button-block button-dark"/>
+   
+  </form>
+    </ion-list>
+</div> 
+     </div>
+    </ion-content>
+</ion-view>

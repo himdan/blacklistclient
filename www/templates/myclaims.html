@@ -1,0 +1,28 @@
+<ion-view view-title="Manage My Claims">
+<ion-nav-buttons side="right">
+    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+  </ion-nav-buttons>    
+  <ion-content class="padding">
+    <div class="list-card">
+    <div class="item item-avatar">
+    <img ng-src="img/manageClaim.png">    
+    <h2> Manage My Claims</h2>    
+    <p>Hello <strong>{{username}}</strong>You Can Manage here Your Claims </p>
+     
+        </div> 
+    <div class="item">      
+      <ion-list>
+       <a title="Add New claim" href="#/tab/myclaims/new" class="button button-dark">+Claims</a>       
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="claim in myclaims" type="item-text-wrap" href="#/tab/myclaims/{{claim.id}}">
+        <img ng-src="{{root+'/uploads/documents/'+claim.medias[0].path}}">
+        <h2>{{claim.title}}</h2>
+        <p>{{claim.description}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        
+      </ion-item>
+    </ion-list> 
+        </div>
+        </div>
+  </ion-content>
+</ion-view>

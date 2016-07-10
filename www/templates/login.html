@@ -1,0 +1,46 @@
+<ion-view view-title="Login">
+  <ion-content class="padding">
+   <div class="list-card">
+    <div class="item item-avatar" >
+       <img ng-src="img/login.png">
+        <h2>Login</h2>
+        <p></p>
+       </div> 
+      <div class="item item-body">
+       <ion-list ng-if="!myclaims">
+    <div class="assertive">{{errors}}</div>
+    
+    <form name="form" class="form" novalidate>
+        
+    <label class="item item-input">           
+    Username:
+    <input type="text" ng-model="user.name" name="uName" required="" placeholder="user name" />
+    <br />
+    <div ng-show="form.$submitted || form.uName.$touched">
+      <div ng-show="form.uName.$error.required">Tell us your user name.</div>
+    </div>
+           </label>
+    
+     <label class="item item-input">       
+    Password:
+    <input type="password" ng-model="user.password" name="uPass" required=""  placeholder="Your Password" />
+    <br />
+    <div ng-show="form.$submitted || form.uPass.$touched">
+      <span ng-show="form.uPass.$error.required">please Type your password</span>
+      <span class="assertive" ng-show="form.uPass.$error.password">This is not a valid password.</span>
+    </div>
+     </label> 
+        
+      
+
+
+
+ <input ng-show="!form.uPass.$error.required&&!form.uName.$error.required" type="submit" ng-click="send(user)" value="Login" class="button button-block button-dark"/>
+   
+  </form>
+    </ion-list>
+       </div>
+    </div>      
+  
+  </ion-content>
+</ion-view>

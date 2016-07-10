@@ -1,0 +1,26 @@
+<ion-view view-title="Home">
+  <ion-content class="padding">
+      
+      <div class="list card">
+      <div class="item item-avatar" >
+          <img ng-src="img/categories.jpg">
+          <h2>Home</h2>
+          <p> Welcom to <strong>Blacklisted</strong></p>
+       </div>
+        <div class="item" style="position:relative;text-align:center;">
+        <ion-list style="position:relative;">
+        <ion-spinner ng-show="loading" style="left:45%">loading</ion-spinner>        
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="category in categories" type="item-text-wrap" href="#/tab/category/{{category.id}}">
+        <img ng-src="{{root+'/uploads/categories/'+category.image}}">
+        <h2>{{category.title}}</h2>
+        <p>{{category.description}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        
+      </ion-item>
+    </ion-list>
+          </div>  
+    
+          </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,72 @@
+<ion-view view-title="Account">
+  <ion-content>
+     <div class="list-card">
+      <div class="item item-avatar">
+          <img ng-src="img/account.png">
+          <h2>create an account</h2>
+          <p> please check Your Email for validation</p>
+         </div>
+         <div class="item item-body">
+         <ion-list>
+    
+    <div class="assertive">{{ status }}</div>
+    <form name="form" class="css-form" novalidate>   
+    <label class="item item-input">           
+    Username:
+    <input type="text" ng-model="user.name" name="uName" required="" placeholder="user name" />
+    <br />
+    <div ng-show="form.$submitted || form.uName.$touched">
+      <div ng-show="form.uName.$error.required">Tell us your user name.</div>
+    </div>
+           </label>
+    <label class="item item-input">       
+    E-mail:
+    <input type="email" ng-model="user.email" name="uEmail" required=""  placeholder="Your Email"/>
+    <br />
+    <div ng-show="form.$submitted || form.uEmail.$touched">
+      <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
+      <span class="assertive" ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+    </div>
+           </label>
+     <label class="item item-input">       
+    Password:
+    <input type="password" ng-model="user.password" name="uPass" required=""  placeholder="Your Password"/>
+    <br />
+    <div ng-show="form.$submitted || form.uPass.$touched">
+      <span ng-show="form.uPass.$error.required">please Type your password</span>
+      <span class="assertive" ng-show="form.uPass.$error.password">This is not a valid password.</span>
+    </div>
+           </label> 
+    <label class="item item-input">
+    Password:
+    <input type="password" ng-model="user.password2" name="uPass2" required=""  placeholder="retype Your Password"/>
+    <br />
+    <div ng-show="form.$submitted || form.uPass2.$touched">
+      <span ng-show="form.uPass2.$error.required">please reType your password</span>
+      <span class="assertive" ng-show="form.uPass2.$error.password">This is not a valid password.</span>
+    </div>
+           </label>      
+      
+ <ion-list>
+  <ion-radio ng-model="user.gender" ng-value="'Male'">Male</ion-radio>
+  <ion-radio ng-model="user.gender" ng-value="'Female'">Femal</ion-radio>
+</ion-list> 
+<div ng-show="form.$submitted || form.userAgree.$touched">
+      <span ng-show="!user.agree" class="assertive">Please agree</span>
+</div>    
+<ion-list>
+
+  <ion-checkbox ng-model="user.agree" name="userAgree" required="" >I agree</ion-checkbox>
+ 
+</ion-list>
+
+
+ <input ng-show="user.password==user.password2&&form.uPass2.$touched&&!form.uEmail.$error.email&&!form.uName.$error.required" type="submit" ng-click="register(user)" value="Send" class="button button-block button-dark"/>
+   
+  </form>
+    </ion-list>
+         </div>
+      </div>  
+    
+  </ion-content>
+</ion-view>
