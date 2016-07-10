@@ -1,1 +1,1 @@
-"# blacklistclient" 
+"# blacklistclient"  is fullstack ionic project consuming a Rest API account management how to create remote resource for more information about the Rest Api that this application is consuming,have a look in blacklisted
